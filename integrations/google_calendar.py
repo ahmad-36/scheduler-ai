@@ -21,7 +21,7 @@ def make_flow(client_secret_file: str, base_url: str, state: str | None = None) 
     return flow
 
 def authorization_url(flow: Flow) -> tuple[str, str]:
-    url, state = flow.authorization_url(access_type="offline", include_granted_scopes="true", prompt="consent")
+    url, state = flow.authorization_url(access_type="offline", prompt="consent")
     return url, state
 
 def exchange_code(flow: Flow, code: str) -> dict:
