@@ -1,0 +1,25 @@
+# Environment
+.env
+*.env
+
+# Google credentials (keep out of git — use GOOGLE_CLIENT_SECRET_JSON env var on Render)
+client_secret.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+scheduler/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
