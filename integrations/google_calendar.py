@@ -9,7 +9,7 @@ SCOPES = ["https://www.googleapis.com/auth/calendar"]
 def make_flow(client_secret_file: str, base_url: str, state: str | None = None) -> Flow:
     import json
     # Prefer env var (for cloud hosting) over file
-    secret_json = os.getenv("GOOGLE_CLIENT_SECRET_JSON", "")
+    secret_json = os.getenv("GOOGLE_CLIENT_SECRET_JSON", "").strip()
     if secret_json:
         config = json.loads(secret_json)
         flow = Flow.from_client_config(config, scopes=SCOPES, state=state)
